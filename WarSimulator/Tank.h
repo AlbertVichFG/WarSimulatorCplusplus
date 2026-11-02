@@ -1,7 +1,7 @@
 ﻿#pragma once
-#include "Stats.h"
+#include "Unit.h"
 
-class Tank : public Stats
+class Tank : public Unit
 {
 public:
     

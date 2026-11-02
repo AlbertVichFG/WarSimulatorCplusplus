@@ -1,9 +1,12 @@
 ﻿#pragma once
-#include "Stats.h"
 
-class Soldier : public Stats
+#include "Unit.h"
+
+class Soldier : public Unit
 {
 public:
-    int 
+    Soldier();
+    
+    int calculateDamage() override;
     
 };

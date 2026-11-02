@@ -156,15 +156,16 @@
   <ItemGroup>
     <ClCompile Include="HorseMan.cpp" />
     <ClCompile Include="Soldier.cpp" />
-    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="Unit.cpp" />
     <ClCompile Include="Tank.cpp" />
     <ClCompile Include="WarSimulator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HorseMan.h" />
     <ClInclude Include="Soldier.h" />
-    <ClInclude Include="Stats.h" />
+    <ClInclude Include="Unit.h" />
     <ClInclude Include="Tank.h" />
+    <ClInclude Include="WarSimulator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
