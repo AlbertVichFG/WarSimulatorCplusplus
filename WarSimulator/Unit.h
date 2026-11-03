@@ -3,24 +3,37 @@
 
 class Unit
 {
-public:
-    std :: string name;
+protected:
+    // Atributs protegits: accessibles des de les classes filles
+    std::string name;
     int heal;
     int armor;
     int dmg;
-    float atackSpeed;
-    
-    Unit(std::string name, int heal, int armor, float atackSpeed);
-    
+
+    float attackSpeed;
+    float attackProgress; // Acumula la velocitat d'atac entre rondes
+
+public:
+    // Constructor: inicialitza les característiques de la unitat
+    Unit(const std::string& name, int heal, int armor,
+         int dmg, float attackSpeed);
+
+    // Destructor virtual: permet destruir correctament les classes filles
     virtual ~Unit();
-    
-    std::string getName();
-    int getHeal();
-    int getArmor();
-    bool isAlive();
-    
-    void getDmg( int _damage);
-    
-    virtual int calculateDamage() = 0;
+
+    // Getters: permeten consultar els atributs
+    std::string getName() const;
+    int getHeal() const;
+    int getArmor() const;
+    bool isAlive() const;
+
+    // Rep el dany d'un atac
+    void getDmg(int incomingDamage);
+
+    // Calcula quants atacs pot fer durant una ronda
+    int getAttacksThisRound();
+
+    // Cada tipus d'unitat implementarà el seu propi càlcul de dany
+    virtual int calculateDamage() const = 0;
     
 };

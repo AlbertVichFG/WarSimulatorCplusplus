@@ -4,5 +4,7 @@
 class Tank : public Unit
 {
 public:
-    
+    Tank();
+
+    int calculateDamage() const override;
 };

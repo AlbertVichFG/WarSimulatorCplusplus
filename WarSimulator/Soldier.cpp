@@ -1,8 +1,13 @@
 ﻿#include "Soldier.h"
 
-Soldier ::  Soldier(): Unit("Infantery", 100, 2, 3)
+// Inicialitzem les característiques del soldat
+Soldier::Soldier()
+    : Unit("Soldier", 100, 2, 20, 1.0f)
 {
-    
 }
 
-int Soilder calculateDamage() {return 20;}
+// Retorna el dany del soldat
+int Soldier::calculateDamage() const
+{
+    return dmg;
+}
