@@ -85,20 +85,36 @@ void Battle::attackArmy(Army& attacker, Army& defender)
 // Inicia la simulacio de la guerra
 void Battle::start()
 {
-    // El combat continua mentre els dos exercits tinguin unitats vives
+    // Distribució aleatòria: 0 = A comença, 1 = B comença
+    std::uniform_int_distribution<int> firstAttacker(0, 1);
+
+    // El combat continua mentre els dos exèrcits tinguin unitats vives
     while (armyA.hasLivingUnits() && armyB.hasLivingUnits())
     {
-        // Ataca primer l'exercit A
-        attackArmy(armyA, armyB);
+        // Decidim aleatòriament qui ataca primer aquesta ronda
+        int first = firstAttacker(generator);
 
-        // Si encara queden enemics, contraataca l'exercit B
-        if (armyB.hasLivingUnits())
+        if (first == 0)
         {
+            // Primer ataca A
+            attackArmy(armyA, armyB);
+
+            // Després contraataca B si encara té unitats
+            if (armyB.hasLivingUnits())
+                attackArmy(armyB, armyA);
+        }
+        else
+        {
+            // Primer ataca B
             attackArmy(armyB, armyA);
+
+            // Després contraataca A si encara té unitats
+            if (armyA.hasLivingUnits())
+                attackArmy(armyA, armyB);
         }
     }
 
-    // Mostrem nomes el resultat final
+    // Mostrem el resultat final
     showResults();
 }
 
