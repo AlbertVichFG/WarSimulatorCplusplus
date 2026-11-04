@@ -87,4 +87,63 @@ int main()
     battle.start();
 
     return 0;
+    
+    
+/*    APUNTS!!
+ *    auto tropa = new Unit(Unit::soldadoRaso); no funciona perque jo no tinc d'això
+ *    
+ *    //això es dif
+    using tropa = std::unique_ptr<Unit>;
+    tropa Artilleria = std::make_unique<Soldier>(Unit::Artilleria,50);
+    tropa Sniper = std::make_unique<Soldier>(Unit::Sniper,20);
+    
+    Aixi creem nova unitat -> lo millor seria posar en el enum tots els parametres
+    No hi ha unitat incognita per aixo agafem artilleria i nomñes canvia el nom!!
+    topa UnidadIncognita = std::make_unique<Soldier>(Unit::Atrilleria, 3);
+    
+    tropa soldier3
+    
+    Artilleria ->AddTrop();
+    std::vector<Unit> exercit;
+    exercit.push_back(Artilleria)
+    
+    //
+    
+MAP (mateix que un dictionari a C#
+Key y un valor
+
+map<string, int>exemple;
+exemple.insert(pair<string, int>("Ejercito",1));
+exemple.insert(pair<string, int>("Pokemons",151));
+
+cout<<"Ejercito: "<<ejemplo["Pokemons"] <<endl;
+
+map <string,string> catala;
+map <string,string> english;
+
+catala.insert(pai<string,string>("Dialogo1", "Hola mon"));
+english.insert(pai<string,string>("Dialogo1", "Hello world"));
+
+//SET (una llista on no es pot repetir el valor
+
+set<string> habilitats;
+habilitats.insert("BolaDeFoc");
+habilitats.insert("Curarse");
+habilitats.insert("BolaDeFoc");
+
+cout << habilitats.size();
+
+
+
+//          Estan Ordenats?            Poden Tenir Valors Repetits?
+    
+Vector            Si                               Si
+    
+MAP               NO               No es poden repetir Keys, valors si
+
+SET               Si                               NO
+    */
+    
+    std::unique_ptr<Unit> tropa2;
+    std::unique_ptr<Unit> tropa3;
 }
